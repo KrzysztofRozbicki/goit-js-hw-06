@@ -20,6 +20,6 @@ images.forEach(image => {
   galleryEl.append(imageItem);
   imageItem.insertAdjacentHTML(
     'beforeend',
-    `<img class="gallery__item" src= ${image.url} alt= ${image.alt} />`
+    `<img class="gallery__item" src= "${image.url}" alt= "${image.alt}" />`
   );
 });
