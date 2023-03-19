@@ -1,3 +1,5 @@
+const START_SIZE = 30;
+const INCREMENT_SIZE_VALUE = 10;
 const boxesEl = document.querySelector('#boxes');
 const inputEl = document.querySelector('#controls').children[0];
 const createEl = document.querySelector('#controls').children[1];
@@ -10,12 +12,12 @@ function getRandomHexColor() {
 }
 
 function createBoxes(amount) {
-  let size = 30;
+  let size = START_SIZE;
   let divHTML = '';
   for (let i = 0; i < amount; i++) {
     divHTML += `<div style="width: ${size}px; height: ${size}px; background-color: ${getRandomHexColor()}"></div>`;
     boxesEl.innerHTML = divHTML;
-    size += 10;
+    size += INCREMENT_SIZE_VALUE;
   }
 }
 
