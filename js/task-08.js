@@ -1,3 +1,5 @@
+const emailEl = document.querySelector('input[type=email]');
+const passwordEl = document.querySelector('input[type=password]');
 const formEl = document.querySelector('.login-form');
 
 formEl.addEventListener('submit', handleSubmit);
@@ -6,8 +8,8 @@ function handleSubmit(event) {
   event.preventDefault();
 
   const user = {
-    email: event.currentTarget.elements.email.value,
-    password: event.currentTarget.elements.password.value,
+    email: emailEl.value,
+    password: passwordEl.value,
   };
 
   if (user.email === '' || user.password === '')
