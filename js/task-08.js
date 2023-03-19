@@ -1,23 +1,18 @@
-const emailEl = document.querySelector('#email');
-const passwordEl = document.querySelector('#password');
 const formEl = document.querySelector('.login-form');
 
 formEl.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
-  const {
-    elements: { email, password },
-  } = event.currentTarget;
 
-  if (email.value === '' || password.value === '') {
-    alert('Wszystkie pola powinny zostać wypełnione!');
-  } else {
-    const user = {
-      email: email.value,
-      password: password.value,
-    };
-    console.log(user);
-    event.currentTarget.reset();
-  }
+  const user = {
+    email: event.currentTarget.elements.email.value,
+    password: event.currentTarget.elements.password.value,
+  };
+
+  if (user.email === '' || user.password === '')
+    return alert('Wszystkie pola powinny zostać wypełnione!');
+
+  console.log(user);
+  event.currentTarget.reset();
 }
