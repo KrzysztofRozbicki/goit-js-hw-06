@@ -9,13 +9,12 @@ const destroyEl = document.querySelector('button[data-destroy]');
 let size = START_SIZE;
 
 //Create random color in HEX value function
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
+const getRandomHexColor = () =>
+  `#${Math.floor(Math.random() * 16777215)
     .toString(16)
     .padStart(6, 0)}`;
-}
 
-function createBoxes(amount) {
+const createBoxes = amount => {
   for (let i = 0; i < amount; i++) {
     const singleBox = document.createElement('div');
     singleBox.style.width = `${size}px`;
@@ -24,11 +23,9 @@ function createBoxes(amount) {
     boxesEl.append(singleBox);
     size += INCREMENT_SIZE_VALUE;
   }
-}
+};
 
-function destroyBoxes() {
-  boxesEl.innerHTML = '';
-}
+const destroyBoxes = () => (boxesEl.innerHTML = '');
 
 createEl.addEventListener('click', () => createBoxes(inputEl.value));
 

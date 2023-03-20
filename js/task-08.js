@@ -11,7 +11,6 @@ function handleSubmit(event) {
     email: emailEl.value,
     password: passwordEl.value,
   };
-
   if (user.email === '' || user.password === '')
     return alert('Wszystkie pola powinny zostać wypełnione!');
 
