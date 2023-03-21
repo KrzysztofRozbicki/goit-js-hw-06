@@ -6,9 +6,7 @@ formEl.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
-  const {
-    elements: { email, password },
-  } = event.currentTarget;
+  const { email, password } = event.currentTarget.elements;
 
   if (email.value === '' || password.value === '') {
     alert('Wszystkie pola powinny zostać wypełnione!');
